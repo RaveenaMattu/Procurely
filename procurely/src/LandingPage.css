@@ -226,7 +226,7 @@
 
 /* How It Works Section */
 .how-it-works-section {
-  background: rgba(255, 230, 109, 0.12);
+  background: #ffe66d1f;
   padding: 100px 0;
 }
 
@@ -289,7 +289,7 @@
 }
 
 .faq-list {
-  max-width: 1116px;
+  max-width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -299,7 +299,7 @@
 .faq-item {
   background: #f6f7fb;
   border: 2px solid #6b6b6b;
-  border-radius: 20px;
+  border-radius: 12px;
   box-shadow: 0 10px 10px rgba(156, 155, 155, 0.25);
   overflow: hidden;
   opacity: 1;
@@ -314,12 +314,12 @@
   width: 100%;
   background: none;
   border: none;
-  padding: 20px 46px;
+  padding: 5px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 400;
   color: #1d1d1f;
   text-align: left;
@@ -335,16 +335,27 @@
 }
 
 .faq-answer {
-  padding: 0 46px 28px;
-  font-size: 24px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 46px;
+  font-size: 20px;
   color: #666;
-  line-height: 1.4;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.faq-answer p {
+  white-space: pre-line; 
+}
+
+.faq-item.open .faq-answer {
+  max-height: 500px;
+  padding: 20px 46px 28px;
 }
 
 /* Testimonials Section */
 .testimonials-section {
   background: #4bd3ff;
-  padding: 100px 20px 120px; /* added 20px horizontal padding */
+  padding: 100px 20px 120px;
 }
 
 .testimonials-title {
