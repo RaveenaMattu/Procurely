@@ -166,8 +166,9 @@ const LandingPage = () => {
       <header className="header">
         <div className="header-content">
           <div className="logo-section">
-            <div className="logo-circle"></div>
-            <span className="logo-text">Procurely</span>
+            <img className="logo-image"  src="/effishop.png" alt="EffiShop Logo"/>
+            {/* <div className="logo-circle"></div>
+            <span className="logo-text">Procurely</span> */}
           </div>
           <button
             className="login-button"

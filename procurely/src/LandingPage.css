@@ -33,17 +33,9 @@
   gap: 14px;
 }
 
-.logo-circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #4bd3ff;
-}
-
-.logo-text {
-  font-size: 24px;
-  font-weight: 700;
-  color: #1d1d1f;
+.logo-image {
+  width: 150px;
+  height: auto;
 }
 
 .login-button {
