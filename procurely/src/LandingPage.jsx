@@ -1,15 +1,76 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import "./LandingPage.css";
 import LoginModal from "./LoginModal";
 
 const LandingPage = () => {
+  const taglines = [
+    {
+      text: "Hours of research, done in seconds.",
+      highlights: ["done in seconds."],
+    },
+    {
+      text: "Shop tech smart. No ads. No hassle.",
+      highlights: ["No ads.", "No hassle."],
+    },
+    {
+      text: "Shopping for tech, simplified.",
+      highlights: ["simplified."],
+    },
+    {
+      text: "Like asking a techy friend—only faster.",
+      highlights: ["faster."],
+    },
+    {
+      text: "Confident buying choices, every time.",
+      highlights: ["Confident buying"],
+    },
+  ];
+
+  // Highlight function for each tagline
+  const highlightText = (text, highlights) => {
+    let parts = [text];
+
+    highlights.forEach((keyword) => {
+      parts = parts.flatMap((part) =>
+        typeof part === "string"
+          ? part.split(new RegExp(`(${keyword})`, "gi")).map((p, i) =>
+              p.toLowerCase() === keyword.toLowerCase() ? (
+                <span key={p + i} className="hero-highlight">
+                  {p}
+                </span>
+              ) : (
+                p
+              )
+            )
+          : part
+      );
+    });
+
+    return parts;
+  };
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false); // start fade out
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % taglines.length);
+        setFade(true); // fade back in
+      }, 400);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [taglines.length]);
+
   const [openFaq, setOpenFaq] = useState(null);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const faqs = [
     {
       question: "1. Why not just Google the product?",
       answer:
-        "Because Procurely provides curated, verified results instead of random links.",
+        "Because Effishop provides curated, verified results instead of random links.",
     },
     {
       question: "2. How does this save me time?",
@@ -21,9 +82,9 @@ const LandingPage = () => {
       answer: "Yes, our basic plan is free. Premium features are optional.",
     },
     {
-      question: "4. Will Procurely help me find budget-friendly options?",
+      question: "4. Will EffiShop help me find budget-friendly options?",
       answer:
-        "Yes. Whether you want top-of-the-line or best-value, Procurely matches results to your shopping style.",
+        "Yes. Whether you want top-of-the-line or best-value, EffiShop matches results to your shopping style.",
     },
     {
       question: "5. What kind of tech products do people usually buy?",
@@ -49,7 +110,7 @@ const LandingPage = () => {
     <svg width="31" height="32" viewBox="0 0 31 32" fill="none">
       <path
         d="M12.9167 21.8666L7.75 16.5333L9.55833 14.6666L12.9167 18.1333L21.4417 9.33331L23.25 11.2L12.9167 21.8666Z"
-        fill="#FFE66D"
+        fill="#1d1f1f"
       />
     </svg>
   );
@@ -107,11 +168,11 @@ const LandingPage = () => {
   );
 
   const ChevronDownIcon = () => (
-    <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
+    <svg width="30" height="30" viewBox="0 0 48 48" fill="none">
       <path
         d="M12 18L24 30L36 18"
         stroke="#1E1E1E"
-        strokeWidth="4"
+        strokeWidth="3"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -151,7 +212,7 @@ const LandingPage = () => {
       height="34"
       viewBox="0 0 34 34"
       fill="none"
-      transform="rotate(-131.048)"
+      className="rotated-icon"
     >
       <path
         d="M13.9136 19.5568C12.6221 18.0737 11.6483 16.3525 10.9921 14.3935C10.336 12.4344 10.1179 10.3757 10.3379 8.21723C10.3574 7.93506 10.4677 7.70642 10.6688 7.5313C10.8699 7.35618 11.1116 7.27837 11.3937 7.29786L14.601 7.55486C14.8596 7.57273 15.0746 7.66732 15.2459 7.83863C15.4171 8.00994 15.5119 8.22027 15.5301 8.4696L15.7753 12.1014C15.7875 12.2676 15.7652 12.4196 15.7084 12.5575C15.6516 12.6953 15.5604 12.819 15.4347 12.9284L13.2853 14.8C13.5504 15.4089 13.8579 16.0031 14.2077 16.5825C14.5575 17.1619 14.9622 17.7155 15.4219 18.2435C15.8816 18.7714 16.3743 19.2484 16.9001 19.6746C17.4259 20.1007 17.9722 20.4869 18.5389 20.8332L20.6882 18.9617C20.8139 18.8522 20.9489 18.7789 21.0933 18.7416C21.2376 18.7043 21.3913 18.7031 21.5542 18.738L25.1178 19.4803C25.3623 19.5326 25.5576 19.6554 25.7037 19.8486C25.8498 20.0418 25.914 20.2677 25.8961 20.5264L25.7096 23.7385C25.6901 24.0207 25.5798 24.2493 25.3787 24.4244C25.1776 24.5996 24.936 24.6774 24.6538 24.6579C22.4966 24.5915 20.4901 24.0956 18.6344 23.17C16.7787 22.2444 15.2051 21.04 13.9136 19.5568Z"
@@ -166,9 +227,13 @@ const LandingPage = () => {
       <header className="header">
         <div className="header-content">
           <div className="logo-section">
-            <img className="logo-image"  src="/effishop.png" alt="EffiShop Logo"/>
+            <img
+              className="logo-image"
+              src="/effishop.png"
+              alt="EffiShop Logo"
+            />
             {/* <div className="logo-circle"></div>
-            <span className="logo-text">Procurely</span> */}
+            <span className="logo-text">EffiShop</span> */}
           </div>
           <button
             className="login-button"
@@ -184,14 +249,23 @@ const LandingPage = () => {
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title">
-              Shopping
-              <br />
-              <span className="hero-title-line2">
-                for Tech <span className="hero-highlight">Made Easy</span>
+              {/* Shopping
+              <br /> */}
+              <span
+                className={`hero-title-line2 ${fade ? "fade-in" : "fade-out"}`}
+              >
+                {highlightText(
+                  taglines[currentIndex].text,
+                  taglines[currentIndex].highlights
+                )}
               </span>
             </h1>
-
             <div className="hero-features">
+              <p className="hero-description">
+                Imagine having a tech-savvy friend who knows every product,
+                every review, and every price—updated in real time. That’s{" "}
+                <span className="highlight">Effishop</span>.
+              </p>
               <div className="feature-item">
                 <CheckIcon />
                 <span>AI agents work 24/7 without breaks</span>
@@ -204,14 +278,6 @@ const LandingPage = () => {
                 <CheckIcon />
                 <span>Instant responses to prospects</span>
               </div>
-              <div className="feature-item">
-                <CheckIcon />
-                <span>Maximizes revenue with minimal effort</span>
-              </div>
-              <div className="feature-item">
-                <CheckIcon />
-                <span>Complimentary demonstration available</span>
-              </div>
             </div>
 
             <button className="get-started-button">
@@ -221,7 +287,11 @@ const LandingPage = () => {
           </div>
 
           <div className="hero-image">
-            <div className="hero-image-placeholder"></div>
+            <img
+              src="/header.png"
+              alt="Hero"
+              className="hero-image-placeholder"
+            />
           </div>
         </div>
       </section>
@@ -230,17 +300,14 @@ const LandingPage = () => {
       <section className="why-choose-section">
         <div className="section-content">
           <h2 className="section-title">
-            <span className="title-highlight">Why</span> Choose Us?
+            <span className="title-highlight">Why</span> Choose EffiShop?
           </h2>
 
           <p className="section-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            Hours of research shouldn’t take hours. With Effishop, complex
+            comparisons are done in seconds. Whether you’re shopping for a
+            laptop, headphones, or your next phone, we make sure you get the
+            best option—fast, reliable, and without the hassle.
           </p>
 
           <div className="features-list">
@@ -264,7 +331,7 @@ const LandingPage = () => {
       <section className="how-it-works-section">
         <div className="section-content">
           <h2 className="section-title">
-            <span className="hero-highlight">How</span> Procurely Works?
+            <span className="hero-highlight">How</span> EffiShop Works?
           </h2>
 
           <div className="steps-container">
@@ -323,7 +390,7 @@ const LandingPage = () => {
       {/* Testimonials Section */}
       <section className="testimonials-section">
         <h2 className="testimonials-title">
-          What Our Users Say About Procurely?
+          What Our Users Say About EffiShop?
         </h2>
 
         <div className="testimonials-container-wrapper">
