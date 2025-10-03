@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./LandingPage.css";
 import LoginModal from "./LoginModal";
+import RegistrationModal from "./RegistrationModal";
 
 const LandingPage = () => {
   const taglines = [
@@ -66,6 +67,7 @@ const LandingPage = () => {
 
   const [openFaq, setOpenFaq] = useState(null);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
   const faqs = [
     {
       question: "1. Why not just Google the product?",
@@ -106,6 +108,16 @@ const LandingPage = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const handleLoginClick = () => {
+    setIsRegistrationModalOpen(false);
+    setIsLoginModalOpen(true);
+  };
+
+  const handleRegistrationClick = () => {
+    setIsLoginModalOpen(false);
+    setIsRegistrationModalOpen(true);
+  };
+
   const CheckIcon = () => (
     <svg width="31" height="32" viewBox="0 0 31 32" fill="none">
       <path
@@ -124,43 +136,76 @@ const LandingPage = () => {
     </svg>
   );
 
-  const SearchIcon = () => (
-    <svg width="42" height="42" viewBox="0 0 84 84" fill="none">
+  const HourglassIcon = () => (
+    <svg
+      width="42"
+      height="42"
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Top Bowl */}
       <path
-        d="M35 56C47.1503 56 57 46.1503 57 34C57 21.8497 47.1503 12 35 12C22.8497 12 13 21.8497 13 34C13 46.1503 22.8497 56 35 56Z"
+        d="M21 12H63V24C63 30 51 36 42 42C33 36 21 30 21 24V12Z"
         stroke="#1E1E1E"
-        strokeWidth="4"
+        strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+      {/* Bottom Bowl */}
       <path
-        d="M49.5859 49.586L64.9999 65"
+        d="M63 72H21V60C21 54 33 48 42 42C51 48 63 54 63 60V72Z"
         stroke="#1E1E1E"
-        strokeWidth="4"
+        strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+      {/* Sand Line */}
+      <path
+        d="M42 42V42"
+        stroke="#1E1E1E"
+        strokeWidth="6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
+  const DealTagIcon = () => (
+    <svg width="42" height="42" viewBox="0 0 100 100" fill="none">
+      <path
+        d="M12 36L36 12L72 48L48 72L12 36Z"
+        stroke="#1E1E1E"
+        strokeWidth="6"
+        strokeLinejoin="round"
+      />
+      <circle cx="30" cy="30" r="4" fill="#1E1E1E" />
     </svg>
   );
 
   const CartIcon = () => (
-    <svg width="43" height="48" viewBox="0 0 43 48" fill="none">
-      <path
-        d="M2.625 2H9.625L14.315 28.78C14.475 29.7008 14.9133 30.5279 15.5532 31.1166C16.1931 31.7053 16.9937 32.018 17.815 32H34.825C35.6463 32.018 36.4469 31.7053 37.0868 31.1166C37.7267 30.5279 38.165 29.7008 38.325 28.78L41.125 12H11.375M18.375 42C18.375 43.1046 17.5915 44 16.625 44C15.6585 44 14.875 43.1046 14.875 42C14.875 40.8954 15.6585 40 16.625 40C17.5915 40 18.375 40.8954 18.375 42ZM37.625 42C37.625 43.1046 36.8415 44 35.875 44C34.9085 44 34.125 43.1046 34.125 42C34.125 40.8954 34.9085 40 35.875 40C36.8415 40 37.625 40.8954 37.625 42Z"
-        stroke="#1E1E1E"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg
+      width="36"
+      height="36"
+      viewBox="0 0 30 30"
+      fill="none"
+      stroke="#1E1E1E"
+      strokeWidth="1.7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="9" cy="21" r="1" />
+      <circle cx="20" cy="21" r="1" />
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
     </svg>
   );
 
-  const FileIcon = () => (
-    <svg width="43" height="46" viewBox="0 0 43 46" fill="none">
+  const ChatBubbleIcon = () => (
+    <svg width="42" height="42" viewBox="0 0 100 100" fill="none">
       <path
-        d="M25 4.65942H11C10.0717 4.65942 9.1815 5.05538 8.52513 5.76019C7.86875 6.46499 7.5 7.42092 7.5 8.41767V38.4836C7.5 39.4804 7.86875 40.4363 8.52513 41.1411C9.1815 41.8459 10.0717 42.2418 11 42.2418H32C32.9283 42.2418 33.8185 41.8459 34.4749 41.1411C35.1313 40.4363 35.5 39.4804 35.5 38.4836V15.9342M25 4.65942L35.5 15.9342M25 4.65942V15.9342H35.5M28.5 25.3298H14.5M28.5 32.8462H14.5M18 17.8133H14.5"
-        stroke="black"
-        strokeWidth="4"
+        d="M21 60L12 72V24C12 17.373 17.373 12 24 12H60C66.627 12 72 17.373 72 24V48C72 54.627 66.627 60 60 60H21Z"
+        stroke="#1E1E1E"
+        strokeWidth="6"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
@@ -280,7 +325,10 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <button className="get-started-button">
+            <button
+              className="get-started-button"
+              onClick={() => setIsRegistrationModalOpen(true)}
+            >
               <span>Get Started</span>
               <ArrowIcon />
             </button>
@@ -312,16 +360,42 @@ const LandingPage = () => {
 
           <div className="features-list">
             <div className="feature-card">
-              <SearchIcon />
-              <span>Easy Search: Smart filters and top searches.</span>
+              <div className="feature-header">
+                <HourglassIcon />
+                <span>Saves You Hours:</span>
+              </div>
+              <p>
+                No more bouncing between multiple sites. EffiShop does the searching in seconds.
+              </p>
             </div>
             <div className="feature-card">
-              <CartIcon />
-              <span>Quick Checkout: Saved payment info & fast checkout.</span>
+              <div className="feature-header">
+                <DealTagIcon />
+                <span>Find Best Deals:</span>
+              </div>
+              <p>
+                Whether it’s brand-new, or refurbished, EffiShop
+                finds you the best option.
+              </p>
             </div>
             <div className="feature-card">
-              <FileIcon />
-              <span>Search History: Download invoices anytime.</span>
+              <div className="feature-header">
+                <CartIcon />
+                <span>One-Click Checkout:</span>
+              </div>
+              <p>
+                Once you’ve decided, we send you straight to the best place to
+                buy.
+              </p>
+            </div>
+            <div className="feature-card">
+              <div className="feature-header">
+                <ChatBubbleIcon />
+                <span>Like Asking a Friend:</span>
+              </div>
+              <p>
+                Get honest, unbiased recommendations.
+              </p>
             </div>
           </div>
         </div>
@@ -338,19 +412,41 @@ const LandingPage = () => {
             <div className="step-card">
               <div className="step-number">1.</div>
               <div className="step-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <h3>Tell Us About Yourself:</h3>
+                <p>
+                  Quick survey to build your shopping “avatar”—are you a bargain
+                  hunter, brand loyalist, or a value-seeker?
+                </p>
               </div>
             </div>
             <div className="step-card">
               <div className="step-number">2.</div>
               <div className="step-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <h3>Search Made Simpler:</h3>
+                <p>
+                  Just type in (or say) what you need—Procurely understands
+                  plain language.
+                </p>
               </div>
             </div>
             <div className="step-card">
               <div className="step-number">3.</div>
               <div className="step-content">
-                <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                <h3>See Everything at Once </h3>
+                <p>
+                  Best prices, trusted reviews, price trends, and product
+                  comparisons—no endless tabs.
+                </p>
+              </div>
+            </div>
+            <div className="step-card">
+              <div className="step-number">4.</div>
+              <div className="step-content">
+                <h3>Buy with Confidence:</h3>
+                <p>
+                  Click straight through to the top deal and relax knowing you
+                  didn’t miss out.
+                </p>
               </div>
             </div>
           </div>
@@ -389,7 +485,7 @@ const LandingPage = () => {
 
       {/* Testimonials Section */}
       <section className="testimonials-section">
-        <h2 className="testimonials-title">
+        <h2 className="section-title">
           What Our Users Say About EffiShop?
         </h2>
 
@@ -516,6 +612,13 @@ const LandingPage = () => {
       <LoginModal
         isOpen={isLoginModalOpen}
         onClose={() => setIsLoginModalOpen(false)}
+        onRegistrationClick={handleRegistrationClick}
+      />
+
+      <RegistrationModal
+        isOpen={isRegistrationModalOpen}
+        onClose={() => setIsRegistrationModalOpen(false)}
+        onLoginClick={handleLoginClick}
       />
     </div>
   );

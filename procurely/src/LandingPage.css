@@ -21,7 +21,7 @@
 .header-content {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 74px;
+  padding: 0 75px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -60,7 +60,6 @@
 .hero-section {
   background: #F6F7FB;
   padding: 100px 200px;
-  padding-right: 150px;
   position: relative;
 }
 
@@ -68,14 +67,16 @@
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;  
+  grid-template-columns: 2fr 1fr;  
   align-items: center;                                    
 }
 
 .hero-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  gap: 30px;
+  align-items: start;
+  justify-items: start;
 }
 
 .hero-title {
@@ -168,12 +169,15 @@
   display: flex;
   align-items: start;
   justify-content: flex-end;
+  min-width: 550px; /* adjust as needed */
+  flex-shrink: 0;   /* don’t let it shrink */
 }
 
 .hero-image img {
   max-width: 100%;
   height: auto;
 }
+
 
 /* Why Choose Us Section */
 .why-choose-section {
@@ -210,21 +214,34 @@
 }
 
 .features-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
-  max-width: 907px;
   margin: 0 auto;
 }
 
 .feature-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   background: #ffda76;
+  padding: 30px;
   border-radius: 20px;
-  padding: 20px 45px;
+}
+
+.feature-header {
   display: flex;
   align-items: center;
-  gap: 50px;
-  min-height: 82px;
+  font-size: 1.02em;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.feature-card p {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .feature-card svg {
@@ -233,12 +250,6 @@
   height: 42px;
 }
 
-.feature-card span {
-  font-size: 22px;
-  font-weight: 400;
-  color: #1d1d1f;
-  line-height: normal;
-}
 
 /* How It Works Section */
 .how-it-works-section {
@@ -248,17 +259,16 @@
 
 .steps-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 100px;
-  max-width: 1000px;
   margin: 0 auto;
-  justify-items: stretch;
+  justify-items: center;
 }
 
-.steps-container .step-card:nth-child(3) {
+ /* .steps-container .step-card:nth-child(3) {
   grid-column: 1 / -1;
   justify-self: center;
-}
+}  */
 
 .step-card {
   width: 400px;
@@ -267,7 +277,7 @@
 
 .step-number {
   width: 115px;
-  height: 69px;
+  height: 60px;
   background: #ffda76;
   border-radius: 10px 10px 0 0;
   display: flex;
@@ -284,18 +294,18 @@
   background: #f7f5ea;
   border: 1px solid #bbb7b7;
   border-radius: 0 10px 10px 10px;
-  padding: 40px 48px;
+  padding: 40px;
   margin-top: -1px;
   min-height: 182px;
-  display: flex;
   align-items: center;
 }
 
 .step-content p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 400;
   color: #1d1d1f;
-  line-height: normal;
+  line-height: 1.5;
+  margin-top: 10px;
 }
 
 /* FAQ Section */
@@ -367,7 +377,7 @@
 /* Testimonials Section */
 .testimonials-section {
   background: #4bd3ff;
-  padding: 100px 20px 120px;
+  padding: 100px 150px;
 }
 
 .testimonials-title {
@@ -379,20 +389,21 @@
 }
 
 .testimonials-container-wrapper {
-  position: relative; /* context for absolute button */
-  padding-bottom: 60px; /* space for button */
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .testimonials-container {
-  display: flex;
-  flex-wrap: wrap; /* wrap on small screens */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   justify-content: center;
+  align-items: start;
 }
 
 .testimonial-card {
   width: 100%;
-  max-width: 30%;
+  max-height: 400px;
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   border-radius: 20px;
@@ -597,10 +608,28 @@
     padding-left: 50px;
     padding-right: 50px;
   }
-
+  .hero-section {
+    padding: 80px 100px;
+  }
   .hero-content {
-    padding-left: 50px;
-    padding-right: 50px;
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image {
+    order: -1;
+    justify-content: center;
+    margin-bottom: 40px;
+    min-width: auto;
+  }
+
+  .hero-text {
+    justify-items: center;
+    text-align: center;
+  }
+
+
+  .testimonials-section {
+    padding: 80px;
   }
 
   .footer-divider {
@@ -614,25 +643,28 @@
 }
 
 @media (max-width: 1200px) {
-  .hero-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
 
-  .hero-image-placeholder {
-    width: 300px;
-    height: 300px;
-  }
-
-  .testimonials-container {
-    flex-direction: column;
+  .hero-section {
+    padding: 80px 20px 60px;
     align-items: center;
+  }
+  .features-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  .testimonial-section {
+    padding: 80px 20px 100px;
+  }
+  .how-it-works-section {
+    padding: 80px 20px 60px;
   }
 
   .steps-container {
-    grid-template-columns: 1fr;
-    justify-items: center;
+    row-gap: 80px;
+  }
+
+  .step-card {
+    width: 100%;
   }
 
   .footer-content {
@@ -645,13 +677,24 @@
   .header-content {
     padding: 0 20px;
   }
-
+  .hero-section {
+    padding: 80px;
+  }
   .hero-content {
     padding: 0 20px;
   }
 
   .section-content {
     padding: 0 20px;
+  }
+
+  .why-choose-section {
+    padding:60px;
+  }
+
+  .features-list {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .footer-content,
@@ -661,6 +704,10 @@
 
   .footer-divider {
     margin: 0 20px 30px;
+  }
+
+  .footer-links {
+    font-size: .9em;
   }
 
   .view-all-link {
@@ -676,24 +723,35 @@
   }
 
   .feature-item {
-    font-size: 20px;
+    font-size: 1em;
   }
 
   .feature-card span {
-    font-size: 20px;
+    font-size: 1em;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr;
   }
 
   .step-content p {
-    font-size: 24px;
+    font-size: 1.2em;
   }
-
   .faq-question {
-    font-size: 24px;
-    padding: 20px 24px;
+    font-size: 1.1em;
+    padding: 10px 24px;
   }
 
   .faq-answer {
-    padding: 0 24px 20px;
-    font-size: 18px;
+    font-size: 1em;
   }
+
+  .testimonial-section {
+    padding: 80px 20px 100px;
+  }
+
+  .testimonials-container {
+    grid-template-columns: 1fr;
+  }
+
 }

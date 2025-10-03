@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./LoginModal.css";
 
-const LoginModal = ({ isOpen, onClose }) => {
+const LoginModal = ({ isOpen, onClose, onRegistrationClick }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -229,13 +229,12 @@ const LoginModal = ({ isOpen, onClose }) => {
 
               <div className="register-section">
                 <span className="register-text">Not registered yet ?</span>
-                <a
-                  href=" "
+                <button
                   className="register-link"
-                  onClick={(e) => e.preventDefault()}
+                  onClick={onRegistrationClick}
                 >
                   Register here
-                </a>
+                </button>
               </div>
             </div>
           </div>

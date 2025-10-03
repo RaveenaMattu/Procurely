@@ -1,0 +1,567 @@
+.registration-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(187, 187, 187, 0.68);
+  backdrop-filter: blur(4.7px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.registration-modal {
+  width: 929px;
+  height: 586px;
+  max-width: 95vw;
+  max-height: 90vh;
+  border-radius: 30px;
+  background: #FFF8D9;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  overflow: hidden;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.registration-modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.registration-left-section {
+  width: 45%;
+  height: 100%;
+  background: #4BD3FF;
+  border-radius: 23px 0 0 23px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  flex-shrink: 0;
+}
+
+.step-title {
+  color: #1D1D1F;
+  text-align: center;
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 3em;
+  line-height: 70px;
+}
+
+.registration-right-section {
+  flex: 1;
+  padding: 48px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+.registration-header {
+  margin-bottom: 40px;
+}
+
+.registration-title {
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 65px;
+  margin: 0;
+}
+
+.title-main {
+  color: #111111;
+}
+
+.title-secondary {
+  color: #5F5F5F;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.form-field {
+  position: relative;
+  width: 401px;
+  height: 50px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #1D1D1F;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 4px 4px rgba(187, 187, 187, 0.25);
+  padding: 15px 21px;
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #000;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.form-input::placeholder,
+.form-select option:first-child {
+  color: #8E8B8B;
+  font-weight: 400;
+}
+
+.form-select {
+  cursor: pointer;
+  padding-right: 50px;
+}
+
+.form-field svg {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+
+.checkbox-title {
+  color: #1D1D1F;
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  margin-bottom: 16px;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-left: 1.5em;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #1D1B20;
+  border-radius: 2px;
+  background: #FFF;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+}
+
+.checkbox-item input[type="checkbox"]:checked {
+  background: #4BD3FF;
+  border-color: #4BD3FF;
+}
+
+.checkbox-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFF;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.checkbox-item input[type="checkbox"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkbox-label {
+  color: #000;
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+}
+
+.registration-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  width: 401px;
+}
+
+.back-to-login-link {
+  color: #5f5f5f;
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.back-to-login-link:hover {
+  text-decoration: underline;
+  color: #4BD3FF;
+}
+
+.next-button,
+.submit-button {
+  width: 87px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  background: #1D1D1F;
+  box-shadow: 0 4px 4px rgba(187, 187, 187, 0.25);
+  color: #FFF;
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover:not(.disabled),
+.submit-button:hover:not(.disabled) {
+  background: #333;
+}
+
+.next-button.disabled,
+.submit-button.disabled {
+  background: #999;
+  cursor: not-allowed;
+}
+
+.success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  gap: 30px;
+  padding: 40px;
+}
+
+.success-title {
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 65px;
+  color: #111111;
+  margin: 0;
+}
+
+.success-description {
+  color: #111;
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 65px;
+  margin: 0;
+}
+
+.visit-profile-button {
+  width: 343px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: #1D1D1F;
+  box-shadow: 0 4px 4px rgba(187, 187, 187, 0.25);
+  color: #FFF;
+  font-family: 'Helvetica Neue', -apple-system, Roboto, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.visit-profile-button:hover {
+  background: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+  .registration-modal {
+    width: 90%;
+    max-width: 929px;
+    height: auto;
+    min-height: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .registration-modal-content {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .registration-left-section {
+    width: 100%;
+    height: 200px;
+    border-radius: 30px 30px 0 0;
+    padding: 20px;
+    flex-shrink: 0;
+  }
+
+  .step-title {
+    width: 100%;
+    font-size: 36px;
+    line-height: 50px;
+  }
+
+  .registration-right-section {
+    padding: 30px;
+    flex: 1;
+    min-height: auto;
+  }
+
+  .registration-title {
+    width: 100%;
+    font-size: 36px;
+    line-height: 45px;
+    margin-bottom: 25px;
+  }
+
+  .form-field,
+  .checkbox-title,
+  .registration-actions {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .success-title {
+    width: 100%;
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  .success-description {
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  .visit-profile-button {
+    width: 100%;
+    max-width: 343px;
+  }
+}
+
+@media (max-width: 768px) {
+  .registration-modal-overlay {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: 50px;
+  }
+
+  .registration-modal {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 20px;
+    min-height: auto;
+  }
+
+  .registration-modal-content {
+    border-radius: 20px;
+  }
+
+  .registration-left-section {
+    height: 150px;
+    border-radius: 20px 20px 0 0;
+    padding: 15px;
+  }
+
+  .step-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .registration-right-section {
+    padding: 20px;
+  }
+
+  .registration-title {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .registration-form {
+    gap: 16px;
+  }
+
+  .form-field {
+    height: 44px;
+  }
+
+  .form-input,
+  .form-select {
+    height: 44px;
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .form-select {
+    padding-right: 45px;
+  }
+
+  .checkbox-title {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .checkbox-group {
+    gap: 6px;
+  }
+
+  .checkbox-label {
+    font-size: 13px;
+  }
+
+  .next-button,
+  .submit-button {
+    height: 44px;
+    font-size: 16px;
+    padding: 0 20px;
+    width: auto;
+    min-width: 87px;
+  }
+
+  .success-content {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .success-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .success-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .visit-profile-button {
+    height: 44px;
+  }
+}
+
+@media (max-width: 480px) {
+  .registration-modal-overlay {
+    padding: 5px;
+    padding-top: 20px;
+  }
+
+  .registration-modal {
+    border-radius: 15px;
+  }
+
+  .registration-modal-content {
+    border-radius: 15px;
+  }
+
+  .registration-left-section {
+    height: 120px;
+    border-radius: 15px 15px 0 0;
+    padding: 10px;
+  }
+
+  .step-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .registration-right-section {
+    padding: 15px;
+  }
+
+  .registration-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .success-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .success-description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+  .next-button:hover,
+  .submit-button:hover,
+  .visit-profile-button:hover {
+    background: #1D1D1F;
+  }
+
+  .close-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .form-input,
+  .form-select {
+    font-size: 16px;
+  }
+}
