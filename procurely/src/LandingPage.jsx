@@ -274,7 +274,7 @@ const LandingPage = () => {
           <div className="logo-section">
             <img
               className="logo-image"
-              src={process.env.PUBLIC_URL + '/effishop.png'}
+              src={process.env.PUBLIC_URL + "/effishop.png"}
               alt="EffiShop Logo"
             />
             {/* <div className="logo-circle"></div>
@@ -336,7 +336,7 @@ const LandingPage = () => {
 
           <div className="hero-image">
             <img
-              src={process.env.PUBLIC_URL + '/header.png'} 
+              src={process.env.PUBLIC_URL + "/header.png"}
               alt="Hero"
               className="hero-image-placeholder"
             />
@@ -353,9 +353,9 @@ const LandingPage = () => {
 
           <p className="section-description">
             Hours of research shouldn’t take hours. With EffiShop, complex
-            comparisons are done in seconds. Whether you’re shopping for any tech products like
-            laptops, headphones, or your next phone, we make sure you get the
-            best option—fast, reliable, and without the hassle.
+            comparisons are done in seconds. Whether you’re shopping for any
+            tech products like laptops, headphones, or your next phone, we make
+            sure you get the best option—fast, reliable, and without the hassle.
           </p>
 
           <div className="features-list">
@@ -365,7 +365,8 @@ const LandingPage = () => {
                 <span>Saves You Hours:</span>
               </div>
               <p>
-                No more bouncing between multiple sites. EffiShop does the searching in seconds.
+                No more bouncing between multiple sites. EffiShop does the
+                searching in seconds.
               </p>
             </div>
             <div className="feature-card">
@@ -374,8 +375,8 @@ const LandingPage = () => {
                 <span>Find Best Deals:</span>
               </div>
               <p>
-                Whether it’s brand-new, or refurbished, EffiShop
-                finds you the best option.
+                Whether it’s brand-new, or refurbished, EffiShop finds you the
+                best option.
               </p>
             </div>
             <div className="feature-card">
@@ -393,9 +394,7 @@ const LandingPage = () => {
                 <ChatBubbleIcon />
                 <span>Like Asking a Friend:</span>
               </div>
-              <p>
-                Get honest, unbiased recommendations.
-              </p>
+              <p>Get honest, unbiased recommendations.</p>
             </div>
           </div>
         </div>
@@ -486,7 +485,8 @@ const LandingPage = () => {
       {/* Testimonials Section */}
       <section className="testimonials-section">
         <h2 className="section-title">
-          What Our Users Say About EffiShop?
+          What Our Users Say About{" "}
+          <span className="title-highlight">EffiShop?</span>
         </h2>
 
         <div className="testimonials-container-wrapper">
@@ -500,9 +500,9 @@ const LandingPage = () => {
               </div>
               <h3 className="testimonial-title">Awesome Job</h3>
               <p className="testimonial-text">
-                Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque
-                faucibus ex sapien vitae pellentesque sem placerat. In id cursus
-                mi pretium tellus duis convallis.
+                I usually spend hours reading reviews and comparing specs before
+                buying a laptop. EffiShop did it all in minutes—and I ended up
+                saving $250.
               </p>
               <div className="testimonial-author">
                 <div className="author-avatar">
@@ -512,8 +512,8 @@ const LandingPage = () => {
                   />
                 </div>
                 <div className="author-info">
-                  <div className="author-name">Reviewer Name</div>
-                  <div className="author-date">Date</div>
+                  <div className="author-name">Emily R.</div>
+                  <div className="author-date">Jan 14, 2025</div>
                 </div>
               </div>
             </div>
@@ -527,8 +527,9 @@ const LandingPage = () => {
               </div>
               <h3 className="testimonial-title">Excellent Service</h3>
               <p className="testimonial-text">
-                Fusce a libero efficitur, sollicitudin odio in, tempor magna.
-                Morbi vel lorem at elit pharetra malesuada.
+                I was about to buy from Amazon, but EffiShop showed me a better
+                deal on a refurbished one from Best Buy. Saved money and got it
+                faster!
               </p>
               <div className="testimonial-author">
                 <div className="author-avatar">
@@ -538,8 +539,8 @@ const LandingPage = () => {
                   />
                 </div>
                 <div className="author-info">
-                  <div className="author-name">Another Reviewer</div>
-                  <div className="author-date">Date</div>
+                  <div className="author-name">Daniel K.</div>
+                  <div className="author-date">May 23, 2025</div>
                 </div>
               </div>
             </div>
