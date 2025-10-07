@@ -464,7 +464,7 @@ const RegistrationModal = ({ isOpen, onClose, onLoginClick }) => {
               <div className="registration-header">
                 <h1 className="registration-title">
                   <span className="title-main">Sign Up for </span>
-                  <span className="title-secondary">Smartify Account</span>
+                  <span className="title-secondary">EffiShop Account</span>
                 </h1>
               </div>
             )}

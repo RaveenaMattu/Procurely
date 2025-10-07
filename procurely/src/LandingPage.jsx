@@ -352,9 +352,9 @@ const LandingPage = () => {
           </h2>
 
           <p className="section-description">
-            Hours of research shouldn’t take hours. With Effishop, complex
-            comparisons are done in seconds. Whether you’re shopping for a
-            laptop, headphones, or your next phone, we make sure you get the
+            Hours of research shouldn’t take hours. With EffiShop, complex
+            comparisons are done in seconds. Whether you’re shopping for any tech products like
+            laptops, headphones, or your next phone, we make sure you get the
             best option—fast, reliable, and without the hassle.
           </p>
 
