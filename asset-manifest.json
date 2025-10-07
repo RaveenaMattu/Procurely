@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Procurely/static/css/main.658a5fa3.css",
-    "main.js": "/Procurely/static/js/main.ec48af45.js",
+    "main.js": "/Procurely/static/js/main.70206fc7.js",
     "static/js/453.0b33f09a.chunk.js": "/Procurely/static/js/453.0b33f09a.chunk.js",
     "index.html": "/Procurely/index.html",
     "main.658a5fa3.css.map": "/Procurely/static/css/main.658a5fa3.css.map",
-    "main.ec48af45.js.map": "/Procurely/static/js/main.ec48af45.js.map",
+    "main.70206fc7.js.map": "/Procurely/static/js/main.70206fc7.js.map",
     "453.0b33f09a.chunk.js.map": "/Procurely/static/js/453.0b33f09a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.658a5fa3.css",
-    "static/js/main.ec48af45.js"
+    "static/js/main.70206fc7.js"
   ]
 }
