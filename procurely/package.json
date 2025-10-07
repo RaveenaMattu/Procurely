@@ -1,5 +1,6 @@
 {
   "name": "procurely",
+  "homepage": "https://raveenamattu.github.io/procurely",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
