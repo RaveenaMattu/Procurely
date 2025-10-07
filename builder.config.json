@@ -1,6 +1,0 @@
-{
-  "command": "npx start",
-  "serverUrl": "https://localhost:3000",
-  "authenticateProxy": false,
-  "commitMode": "commits"
-}
