@@ -140,7 +140,7 @@ const LoginModal = ({ isOpen, onClose, onRegistrationClick }) => {
         <div className="login-modal-content">
           <div className="login-image-section">
             <img
-              src="/login.png"
+              src={process.env.PUBLIC_URL + '/login.png'}
               alt="Security illustration"
               className="login-illustration"
             />

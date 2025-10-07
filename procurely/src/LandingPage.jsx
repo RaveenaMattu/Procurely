@@ -274,7 +274,7 @@ const LandingPage = () => {
           <div className="logo-section">
             <img
               className="logo-image"
-              src="/effishop.png"
+              src={process.env.PUBLIC_URL + '/effishop.png'}
               alt="EffiShop Logo"
             />
             {/* <div className="logo-circle"></div>
@@ -336,7 +336,7 @@ const LandingPage = () => {
 
           <div className="hero-image">
             <img
-              src="/header.png"
+              src={process.env.PUBLIC_URL + '/header.png'} 
               alt="Hero"
               className="hero-image-placeholder"
             />
