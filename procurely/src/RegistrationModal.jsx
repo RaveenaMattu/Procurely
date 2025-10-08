@@ -455,6 +455,11 @@ const RegistrationModal = ({ isOpen, onClose, onLoginClick }) => {
         <div className="registration-modal-content">
           {currentStep < 6 && (
             <div className="registration-left-section">
+              <img
+                src={process.env.PUBLIC_URL + '/regBg.png'}
+                alt="Registration Illustration"
+                className="registration-illustration"
+              />
               <h2 className="step-title">{getStepTitle()}</h2>
             </div>
           )}

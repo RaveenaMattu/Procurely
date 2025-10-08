@@ -130,7 +130,7 @@ const LoginModal = ({ isOpen, onClose, onRegistrationClick }) => {
             <path
               d="M18 6L6 18M6 6L18 18"
               stroke="#fff"
-              strokeWidth="2"
+              strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
