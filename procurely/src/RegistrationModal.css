@@ -34,7 +34,7 @@
   width: 32px;
   height: 32px;
   border: none;
-  background: rgba(255, 255, 255, 0.9);
+  background: #1d1f1f;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -59,7 +59,8 @@
 .registration-left-section {
   width: 45%;
   height: 100%;
-  background: #4BD3FF;
+  background-image: url('/public/bg.png');
+background-size: cover;
   border-radius: 23px 0 0 23px;
   display: flex;
   align-items: center;
