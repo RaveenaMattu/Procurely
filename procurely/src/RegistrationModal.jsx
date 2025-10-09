@@ -86,14 +86,28 @@ const RegistrationModal = ({ isOpen, onClose, onLoginClick }) => {
     }
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validateStep()) {
       setIsLoading(true);
-      // Simulate API call
-      setTimeout(() => {
+
+      try {
+        const response = await fetch("http://localhost/procurely/procurely/backend/register.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          setCurrentStep(6);
+        } else {
+          alert(result.error || "Something went wrong");
+        }
+      } catch (error) {
+        alert("Server error: " + error.message);
+      } finally {
         setIsLoading(false);
-        setCurrentStep(6); // Go to success screen
-      }, 1500);
+      }
     }
   };
 
@@ -456,7 +470,7 @@ const RegistrationModal = ({ isOpen, onClose, onLoginClick }) => {
           {currentStep < 6 && (
             <div className="registration-left-section">
               <img
-                src={process.env.PUBLIC_URL + '/regBg.png'}
+                src={process.env.PUBLIC_URL + "/regBg.png"}
                 alt="Registration Illustration"
                 className="registration-illustration"
               />
