@@ -981,4 +981,11 @@
   .faq-section {
     padding: 100px 150px;   
   }
+  .testimonials-section {
+    padding: 100px 150px;
+  }
+  .footer-content,
+  .footer-bottom {
+    padding: 0 100px; 
+  }
 }
