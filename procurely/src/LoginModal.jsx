@@ -144,6 +144,9 @@ const LoginModal = ({ isOpen, onClose, onRegistrationClick }) => {
               alt="Security illustration"
               className="login-illustration"
             />
+            <h1 className="login-title">
+              Sign In to your <span className="login-title-highlight">Dashboard</span>
+            </h1>
           </div>
 
           <div className="login-form-section">
