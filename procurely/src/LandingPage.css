@@ -965,8 +965,8 @@
 
 }
 
-@media (min-width: 2000px) {
-  body {
-    padding: 0 100px; 
+@media (min-width: 1920px) {
+  .header-content{
+    padding: 0 100px;
   }
 }
