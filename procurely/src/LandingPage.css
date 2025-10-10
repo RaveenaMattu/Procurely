@@ -59,7 +59,7 @@
 /* Hero Section */
 .hero-section {
   background: #F6F7FB;
-  padding: 100px 100px;
+  padding: 80px 100px;
   position: relative;
 }
 
@@ -968,5 +968,8 @@
 @media (min-width: 1920px) {
   .header-content{
     padding: 0 100px;
+  }
+  .hero-section {
+    padding: 100px 150px;
   }
 }
