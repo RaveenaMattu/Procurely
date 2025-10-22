@@ -186,8 +186,27 @@
   }
 }
 
+@media (min-width: 1440px) {
+  .footer-brand { font-size: 2.4em; }
+  .footer-description { font-size: 1.1em; }
+  .footer-contact-title { font-size: 2.2em; }
+  .contact-item { font-size: 1.1em; }
+  .footer-links a { font-size: 1em; }
+}
+
 @media (min-width: 1920px) {
-  .footer {
-    padding: 60px 200px; 
-  }
+  .footer { padding: 60px 200px; }
+  .footer-brand { font-size: 2.6em; }
+  .footer-description { font-size: 1.15em; }
+  .footer-contact-title { font-size: 2.4em; }
+  .contact-item { font-size: 1.15em; }
+  .footer-links a { font-size: 1.05em; }
+}
+
+@media (min-width: 2560px) {
+  .footer-brand { font-size: 2.8em; }
+  .footer-description { font-size: 1.2em; }
+  .footer-contact-title { font-size: 2.6em; }
+  .contact-item { font-size: 1.2em; }
+  .footer-links a { font-size: 1.1em; }
 }

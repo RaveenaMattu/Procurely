@@ -795,23 +795,73 @@
   }
 }
 
+/* Large screens improvements */
+@media (min-width: 1440px) {
+  .hero-title { font-size: clamp(3.6em, 2.5vw, 4.4em); height: auto; }
+  .hero-description { font-size: 1.35em; max-width: 720px; }
+  .feature-item { font-size: 1.25em; }
+  .get-started-button { width: 240px; height: 56px; font-size: 1.25em; }
+
+  .section-title { font-size: clamp(4em, 2.8vw, 4.8em); }
+  .section-description { font-size: 1.3em; }
+  .feature-card { padding: 36px; }
+  .features-list { gap: 40px; }
+
+  .steps-container { gap: 120px; }
+  .step-number { width: 130px; height: 68px; font-size: 1.6em; }
+  .step-content { padding: 48px; }
+  .step-content p { font-size: 1.2em; }
+
+  .faq-question { font-size: 1.3em; }
+  .faq-answer { font-size: 1.25em; }
+
+  .testimonial-title { font-size: 1.7em; }
+  .testimonial-text { font-size: 1.1em; }
+  .author-name { font-size: 1.1em; }
+}
+
 @media (min-width: 1920px) {
-  .header-content{
-    padding: 0 100px;
-  }
-  .hero-section {
-    padding: 100px 150px;
-  }
-  .why-choose-section {
-    padding: 100px 150px;
-  }
-  .how-it-works-section {
-    padding: 100px 150px;
-  }
-  .faq-section {
-    padding: 100px 150px;   
-  }
-  .testimonials-section {
-    padding: 100px 300px;
-  }
-  }
+  .header-content{ padding: 0 100px; }
+  .hero-section { padding: 100px 150px; }
+  .why-choose-section { padding: 100px 150px; }
+  .how-it-works-section { padding: 100px 150px; }
+  .faq-section { padding: 100px 150px;   }
+  .testimonials-section { padding: 100px 300px; }
+}
+
+/* Extra large desktops */
+@media (min-width: 1920px) {
+  .hero-title { font-size: clamp(4.6em, 2.6vw, 5.4em); }
+  .hero-description { font-size: 1.5em; max-width: 800px; }
+  .feature-item { font-size: 1.35em; }
+  .get-started-button { width: 260px; height: 60px; font-size: 1.3em; }
+
+  .section-title { font-size: clamp(4.6em, 2.6vw, 5.4em); }
+  .section-description { font-size: 1.4em; }
+
+  .step-number { width: 140px; height: 72px; font-size: 1.7em; }
+  .step-content { padding: 56px; }
+  .step-content p { font-size: 1.25em; }
+
+  .faq-question { font-size: 1.35em; }
+  .faq-answer { font-size: 1.3em; }
+
+  .testimonial-title { font-size: 1.8em; }
+  .testimonial-text { font-size: 1.15em; }
+  .author-name { font-size: 1.12em; }
+  .view-all-link { font-size: 1.35em; }
+}
+
+/* Ultra-wide monitors */
+@media (min-width: 2560px) {
+  .hero-title { font-size: clamp(5em, 2.2vw, 6em); }
+  .hero-description { font-size: 1.6em; max-width: 900px; }
+  .feature-item { font-size: 1.45em; }
+  .get-started-button { width: 280px; height: 64px; font-size: 1.35em; }
+
+  .section-title { font-size: clamp(5em, 2.2vw, 6em); }
+  .section-description { font-size: 1.5em; }
+
+  .testimonial-title { font-size: 2em; }
+  .testimonial-text { font-size: 1.2em; }
+}
