@@ -192,7 +192,7 @@
 }
 
 .section-title {
-  font-size: 60px;
+  font-size: 3.75em;
   font-weight: 700;
   color: #1d1d1f;
   text-align: center;
@@ -205,7 +205,7 @@
 }
 
 .section-description {
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 400;
   color: #1d1d1f;
   text-align: justify;
@@ -315,7 +315,7 @@
 }
 
 .faq-list {
-  max-width: 80%;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -384,7 +384,7 @@
   color: #1d1d1f;
   text-align: center;
   margin-bottom: 80px;
-  font-size: 60px;
+  font-size: 3.75em;
   font-weight: 700;
 }
 
@@ -468,7 +468,7 @@
 }
 
 .author-date {
-  font-size: 14px;
+  font-size: 0.875em;
   font-weight: 400;
   color: rgba(30, 30, 30, 1);
 }
@@ -477,7 +477,7 @@
   position: absolute;
   bottom: 0;
   right: 150px;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 700;
   color: #757575;
   text-decoration: underline;
@@ -491,119 +491,9 @@
   color: #111;
 }
 
-/* Footer */
-.footer {
-  background: #1e1e1e;
-  padding: 60px 0 40px;
-}
-
-.footer-content {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 150px;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 60px;
-}
-
-.footer-left {
-  width: 50%;
-}
-
-.footer-brand {
-  font-size: 2em;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.footer-description {
-  font-size: 1em;
-  font-weight: 400;
-  color: #fff;
-  line-height: normal;
-}
-
-.footer-right {
-  text-align: left;
-}
-
-.footer-contact-title {
-  font-size: 2em;
-  font-weight: 500;
-  color: #fff;
-  margin-bottom: 30px;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 1em;
-  font-weight: 400;
-  color: #fff;
-}
-
-.contact-item svg {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
-.rotated-icon {
-  transform: rotate(-180.048deg);
-  transform: rotateY(27deg);
-  transform-origin: center;
-}
-
-
-.footer-divider {
-  height: 1px;
-  background: #fff;
-  margin: 0 150px 30px;
-}
-
-.footer-bottom {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 150px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-copyright {
-  font-size: .9em;
-  font-weight: 400;
-  color: #fff;
-}
-
-.footer-links {
-  display: flex;
-  gap: 40px;
-}
-
-.footer-links span {
-  font-size: .9em;
-  font-weight: 400;
-  color: #fff;
-  cursor: pointer;
-}
-
-.footer-links span:hover {
-  text-decoration: underline;
-}
-
 @media (max-width: 1400px) {
   .header-content,
   .section-content,
-  .footer-content,
   .footer-bottom {
     padding-left: 50px;
     padding-right: 50px;
@@ -667,11 +557,7 @@
     width: 100%;
   }
 
-  .footer-content {
-    flex-direction: column;
-    gap: 40px;
   }
-}
 
 @media (max-width: 768px) {
   .header-content {
@@ -697,7 +583,6 @@
     gap: 20px;
   }
 
-  .footer-content,
   .footer-bottom {
     padding: 0 20px;
   }
@@ -715,11 +600,11 @@
   }
 
   .hero-title {
-    font-size: 48px;
+    font-size: 3em;
   }
 
   .section-title {
-    font-size: 48px;
+    font-size: 3em;
   }
 
   .feature-item {
@@ -861,7 +746,7 @@
   }
 
   .faq-section > .section-content {
-    padding: 0;
+    padding: 0 20px;
   }
 
   .faq-question {
@@ -908,61 +793,6 @@
     bottom: -10px;
     right: 20px;
   }
-
-  .footer {
-    padding: 40px 20px;;
-  }
-
-  .footer-content {
-    display: block;
-    padding: 0;
-  }
-
-  .footer-left, .footer-right {
-    width: 100%;
-    text-align: left;
-  }
-
-  .footer-brand, .footer-contact-title {
-    font-size: 1.5em;
-  }
-
-  .footer-description {
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin-bottom: 20px;
-  }
-
-  .footer-contact-title {
-    margin-bottom: 20px;
-  }
-
-  .contact-item svg {
-    width: 20px;
-    height: 20px;
-  }
-  .footer-links {
-    display: flex;
-    gap: 20px;
-  }
-
-  .footer-divider {
-    margin: 20px 0;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .footer-copyright {
-    font-size: .9em;
-  }
-  .footer-links span {
-    font-size: .9em;
-  }
-
 }
 
 @media (min-width: 1920px) {
@@ -984,7 +814,4 @@
   .testimonials-section {
     padding: 100px 300px;
   }
-  .footer {
-    padding: 60px 200px; 
   }
-}

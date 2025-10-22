@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.terms-page {
+  font-family: "Helvetica Neue", -apple-system, Roboto, Helvetica, sans-serif;
+  background: #F6F7FB;
+  min-height: 100vh;
+}
+
+.terms-header {
+  background: #F6F7FB;
+  padding: 65px 0 20px;
+}
+
+.terms-header-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 67px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.terms-logo-section {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.terms-logo-image {
+  width: 150px;
+  height: auto;
+}
+
+.terms-main {
+  background: #F6F7FB;
+  padding: 70px 0 100px;
+  padding-bottom: 0;
+}
+
+.terms-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 150px;
+}
+
+.terms-page-title {
+  font-size: 3em;
+  font-weight: 700;
+  line-height: normal;
+  color: #000;
+  margin-bottom: 40px;
+}
+
+.terms-effective-date {
+  font-size: 1.125em;
+  font-weight: 400;
+  line-height: normal;
+  color: #5F5F5F;
+  margin-bottom: 30px;
+}
+
+.terms-effective-date span {
+  color: #5F5F5F;
+}
+
+.terms-intro {
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 32px;
+  color: #000;
+  margin-bottom: 24px;
+}
+
+.terms-intro strong {
+  font-weight: 700;
+}
+
+.terms-section {
+  margin-bottom: 60px;
+}
+
+.terms-page .section-title {
+  font-size: 2em;
+  font-weight: 700;
+  line-height: 35px;
+  color: #000;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.terms-page .section-divider {
+  width: 100%;
+  height: 1px;
+  background: #5F5F5F;
+  margin-bottom: 47px;
+}
+
+.terms-page .section-text {
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 32px;
+  color: #000;
+  margin-bottom: 28px;
+}
+
+.terms-page .section-text strong {
+  font-weight: 700;
+}
+
+.terms-page .section-text.bottom-spacing {
+  margin-bottom: 0;
+}
+
+.terms-list {
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 32px;
+  color: #000;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.terms-list li {
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.terms-list.simple-list li::before {
+  content: none;
+}
+
+.terms-list strong {
+  font-weight: 700;
+}
+
+.terms-page .underlined-text {
+  text-decoration: underline;
+}
+
+.terms-page .underlined-text a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.terms-page .contact-info {
+  margin-top: 35px;
+}
+
+.terms-page .contact-info a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.last-updated {
+  font-size: 1.25em;
+  margin-top: 35px;
+  margin-bottom: 0;
+}
+@media (max-width: 1000px) {
+  .terms-main {
+    padding: 50px 60px;
+  }
+  .terms-content {
+    padding: 0;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .terms-logo-image {
+    width: 120px;
+  }
+  
+  .terms-page-title {
+    font-size: 2.25em;
+  }
+  
+  .terms-effective-date,
+  .terms-intro,
+  .terms-page .section-text,
+  .terms-list {
+    font-size: 1em;
+    line-height: 24px;
+  }
+  
+  .terms-page .section-title {
+    font-size: 1.25em;
+    line-height: 26px;
+  }
+}
