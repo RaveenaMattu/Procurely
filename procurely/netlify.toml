@@ -1,8 +1,11 @@
+# netlify.toml (place in the root of your repo)
 [build]
-  command = "npm run build"
-  publish = "build"
+  base = "procurely"          
+  command = "npm run build"   
+  publish = "procurely/build" 
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
