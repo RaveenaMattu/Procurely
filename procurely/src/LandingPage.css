@@ -853,7 +853,13 @@
 }
 
 /* Ultra-wide monitors */
-@media (min-width: 2560px) {
+@media (min-width: 2360px) {
+  .header-content{ padding: 0 150px; }
+  .hero-section { padding: 100px 250px; }
+  .why-choose-section { padding: 100px 250px; }
+  .how-it-works-section { padding: 100px 250px; }
+  .faq-section { padding: 100px 250px;   }
+  .testimonials-section { padding: 100px 300px; }
   .hero-title { font-size: clamp(5em, 2.2vw, 6em); }
   .hero-description { font-size: 1.6em; max-width: 900px; }
   .feature-item { font-size: 1.45em; }
