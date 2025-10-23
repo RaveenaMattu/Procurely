@@ -518,12 +518,12 @@ const LandingPage = () => {
           </div>
 
           {/* View All Button */}
-          <button
+          {/* <button
             className="view-all-link"
             onClick={() => console.log("View all testimonials")}
           >
             View More &gt;&gt;
-          </button>
+          </button> */}
         </div>
       </section>
 

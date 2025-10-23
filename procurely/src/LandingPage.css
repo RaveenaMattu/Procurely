@@ -182,13 +182,12 @@
 /* Why Choose Us Section */
 .why-choose-section {
   background: #4bd3ff;
-  padding: 100px 0 120px;
+  padding: 100px 150px;
 }
 
 .section-content {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 150px;
 }
 
 .section-title {
@@ -260,7 +259,7 @@
 .steps-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 100px;
+  row-gap: 70px;
   margin: 0 auto;
   justify-items: center;
 }
@@ -306,6 +305,7 @@
   color: #1d1d1f;
   line-height: 1.5;
   margin-top: 10px;
+  height: 100px;
 }
 
 /* FAQ Section */
@@ -550,7 +550,7 @@
   }
 
   .steps-container {
-    row-gap: 80px;
+    gap: 80px;
   }
 
   .step-card {
@@ -558,7 +558,12 @@
   }
 
   }
+@media (max-width: 1000px) {
+  .why-choose-section {
+    padding: 80px 20px 60px;
+  }
 
+}
 @media (max-width: 768px) {
   .header-content {
     padding: 0 20px;
@@ -614,7 +619,9 @@
   .feature-card span {
     font-size: 1em;
   }
-
+   .how-it-works-section {
+    padding: 80px 50px 60px;
+   }
   .steps-container {
     grid-template-columns: 1fr;
   }
@@ -736,7 +743,9 @@
   .step-content h3 {
     font-size: 1.1em;
   }
-
+  .step-content {
+    height: 80px;
+  }
   .step-content p {
     font-size: 1em;
   }
@@ -769,6 +778,7 @@
 
   .testimonials-section {
     padding: 40px 20px;
+    padding-bottom: 0;
   }
 
   .stars svg {
@@ -807,7 +817,7 @@
   .feature-card { padding: 36px; }
   .features-list { gap: 40px; }
 
-  .steps-container { gap: 120px; }
+  /* .steps-container { gap: 120px; } */
   .step-number { width: 130px; height: 68px; font-size: 1.6em; }
   .step-content { padding: 48px; }
   .step-content p { font-size: 1.2em; }
