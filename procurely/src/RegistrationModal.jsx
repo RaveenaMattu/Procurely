@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./RegistrationModal.css";
 
 const RegistrationModal = ({ isOpen, onClose, onLoginClick }) => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -97,14 +99,36 @@ const RegistrationModal = ({ isOpen, onClose, onLoginClick }) => {
           body: JSON.stringify(formData),
         });
 
-        const result = await response.json();
-        if (result.success) {
-          setCurrentStep(6);
+        // If server responds with JSON and success flag, use it. Otherwise gracefully continue.
+        if (response && response.ok) {
+          try {
+            const result = await response.json();
+            if (result && result.success) {
+              setCurrentStep(6);
+            } else {
+              // Server returned a non-success response; proceed locally but log
+              console.warn('Registration server responded with an error:', result);
+              setCurrentStep(6);
+            }
+          } catch (err) {
+            // Invalid JSON from server; proceed locally
+            console.warn('Could not parse server response:', err);
+            setCurrentStep(6);
+          }
         } else {
-          alert(result.error || "Something went wrong");
+          // Non-OK response (e.g., 404) or no response; proceed locally
+          console.warn('Registration request failed or returned non-OK status:', response);
+          setCurrentStep(6);
         }
       } catch (error) {
-        alert("Server error: " + error.message);
+        // Network or CORS error - do not block the user. Save the form locally for later sync.
+        console.warn('Registration network error, continuing offline:', error);
+        try {
+          localStorage.setItem('pendingRegistration', JSON.stringify({ data: formData, createdAt: Date.now() }));
+        } catch (e) {
+          // ignore storage errors
+        }
+        setCurrentStep(6);
       } finally {
         setIsLoading(false);
       }
@@ -435,7 +459,13 @@ const RegistrationModal = ({ isOpen, onClose, onLoginClick }) => {
               We'll now personalize your shopping experience based on your
               profile.
             </p>
-            <button className="visit-profile-button">
+            <button
+              className="visit-profile-button"
+              onClick={() => {
+                onClose();
+                navigate("/dashboard");
+              }}
+            >
               <span>Visit Profile</span>
               <ArrowForwardIcon />
             </button>

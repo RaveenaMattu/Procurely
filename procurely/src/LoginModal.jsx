@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./LoginModal.css";
 
 const LoginModal = ({ isOpen, onClose, onRegistrationClick }) => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
@@ -81,6 +83,7 @@ const LoginModal = ({ isOpen, onClose, onRegistrationClick }) => {
         console.log("Login submitted:", { username, password });
         // Handle successful login here
         onClose();
+        navigate("/dashboard");
       }, 1500);
     }
   };

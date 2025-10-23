@@ -532,6 +532,14 @@
     border-radius: 15px 15px 0 0;
     padding: 10px;
   }
+  .registration-left-section img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .registration-header {
+    margin: 20px 0;
+  }
 
   .step-title {
     font-size: 1.5em;

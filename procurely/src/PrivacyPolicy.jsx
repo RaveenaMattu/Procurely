@@ -33,7 +33,7 @@ const PrivacyPolicy = () => {
           </p>
 
           <section className="policy-section">
-            <h2 className="section-title">Information We Collect</h2>
+            <h2 className="section-title">1. Information We Collect</h2>
             <div className="section-divider"></div>
             <p className="section-text">
               When you interact with our services—including Facebook Lead Ads, website forms, or other digital touchpoints—we may collect the following types of personal information:

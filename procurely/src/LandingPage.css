@@ -34,8 +34,10 @@
 }
 
 .logo-image {
-  width: 150px;
-  height: auto;
+  width: auto;
+  height: clamp(48px, 3.5vw, 140px);
+  max-height: 50px;
+  display: block;
 }
 
 .login-button {
